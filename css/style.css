@@ -33,7 +33,7 @@
 }
 
 #svg-turkiye-haritasi path:hover {
-  fill: #1094F6;
+  opacity: 0.6
 }
 
 #guney-kibris {
