@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Turkey Electricity Power Generation</title>
     
+    
     <link href="img/lightning.ico" rel="icon">
-
+    
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"> </script>
@@ -513,10 +514,28 @@
         <div class="popupcontent">
             <h5>Power Production Types</h5>
         </div>
-        <div id="popup_plot">
+        <div class="container align-items-center ">
+            <div class="row my-2">
+                <div class="col font-weight-bold ">Province: </div>
+                <div id = "popup_Title" class="col text-left">
+                    0
+                </div>
+            </div>
+            <div class="row my-2">
+                <div class="col font-weight-bold">Total: </div>
+                <div id = "popup_Total" class="col">
+                    0
+                </div>                
+            </div>
+            <div class="row my-2 mb-3">
+                <div class="col font-weight-bold">Percentage (%): </div>
+                <div id = "popup_Perc" class="col">0</div>
+            </div>
+        </div>
+        
+        <div id="popup_plot" style="height: 60%;">
         </div>
     </div>
-
 
 <script src="js/data.js"></script>
 <script src="js/color_pallette.js"></script>
