@@ -108,23 +108,29 @@ var slider = document.getElementById("timeData");
 var output1 = document.getElementById("year");
 var output2 = document.getElementById("month");
 
+var iter = 0; //  set your counter to 1
+var pause_iter = 0;
+
 slider.oninput = function() {
     year = time_data[this.value][0]
     month = time_data[this.value][1]
     datetime_value = year + month/12
     output1.innerHTML = year;
     output2.innerHTML = month;
+    iter = this.value; //  set your counter to 1
+    pause_iter = this.value;
+
     run_algorithm()}
 
-var iter = 0; //  set your counter to 1
-var pause_iter = 0;
 
 function click_break_simulation(){
-    pause_iter = iter;
-    iter=666;
+    if (iter == 156) {iter = 0;pause_iter=0}
+    else if (pause_iter == 666) {iter=slider.value;pause_iter=slider.value}
+    else {pause_iter = iter; iter=666;}
 }
 function click_run_simulation(){
-    if (iter == 666){iter = pause_iter;}
+    if (pause_iter == 666){iter=slider.value;pause_iter=slider.value}
+    else if (iter == 666){iter = pause_iter;}
     else if (iter == 156) {iter = 0;pause_iter=0}
     run_simulation();}
 
