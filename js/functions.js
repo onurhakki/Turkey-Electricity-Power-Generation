@@ -13,11 +13,13 @@ var datetime_value = year + month/12
 var plotting_data = Object.assign({}, store);;
 var selected_colors
 var selected_type = "Count"
+var total_sum = 0 ;
 
 function sum(arr) {
     let r = 0;
+
     for (const e of arr) r += e;
-    
+    total_sum = r
     if (selected_type == "Count"){
         document.getElementById("TotalUnit").innerHTML = "Total (unit):"
     }
@@ -95,7 +97,7 @@ function run_algorithm(){
     
 
     counter()
-    document.getElementById("TotalValue").innerHTML = sum(Object.values(plotting_data["İl"]))
+    document.getElementById("TotalValue").innerHTML = sum(Object.values(plotting_data["İl"]));
     selected_colors = array_to_colors()
     update_colors()}
 
@@ -107,19 +109,18 @@ run_algorithm()
 var slider = document.getElementById("timeData");
 var output1 = document.getElementById("year");
 var output2 = document.getElementById("month");
-
 var iter = 0; //  set your counter to 1
 var pause_iter = 0;
 
 slider.oninput = function() {
     year = time_data[this.value][0]
     month = time_data[this.value][1]
-    datetime_value = year + month/12
-    output1.innerHTML = year;
-    output2.innerHTML = month;
     iter = this.value; //  set your counter to 1
     pause_iter = this.value;
 
+    datetime_value = year + month/12
+    output1.innerHTML = year;
+    output2.innerHTML = month;
     run_algorithm()}
 
 
@@ -192,8 +193,7 @@ function update_pie_chart_locally(il){
     }];
 
     var layout = {
-        //height: 400,
-        //width: 500
+        margin: {l: 0,r: 0,b: 0,t: 0,pad: 0},
         colorway: ['#1f77b4', '#2ca02c','#ff7f0e', '#bcbd22', '#17becf', '#d62728', '#7f7f7f', '#e377c2','#9467bd', '#8c564b',   ],
         showlegend: true,
     };
@@ -240,6 +240,9 @@ function show_values() {
             const parent = event.target.parentNode;
             call_popup()
             const id = parent.getAttribute('id');
+            document.getElementById("popup_Title").innerHTML = document.getElementById(id).getAttribute('name')
+            document.getElementById("popup_Total").innerHTML = Math.round(plotting_data["İl"][id])
+            document.getElementById("popup_Perc").innerHTML =  (100* plotting_data["İl"][id]/total_sum).toFixed(2)
             update_pie_chart_locally(id)}});}
 
 
