@@ -14,7 +14,7 @@ In the study, the number and installed power of power plants belonging to the pr
 
 Coloring scale is given between 1-80 for the number of power plants and 1-8000 for the installed power of the power plant. As numbers increase, colors were designed to be changed from green to red.
 
-![image](https://user-images.githubusercontent.com/53830179/199480989-677118fc-5cd1-4f70-8948-b95a7618617c.png)
+![image](https://user-images.githubusercontent.com/53830179/199481300-0b8975a5-94fc-4e4e-b944-3e79f493fac8.png)
 
 The monthly change simulation can be observed by clicking the "Run" button in the lower right corner. "Break" button is used for stop the simulation.
 
