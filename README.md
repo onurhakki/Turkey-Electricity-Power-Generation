@@ -1,6 +1,6 @@
 # Turkey Electricity Power Generation
 
-Turkey power plants have been visualized in a time scale since 2010. Number and installed mechanical power of power plants depending on the provinces are accessible with power plant types. Go to [https://onurhakki.github.io/Turkey-Electricity-Power-Generation/]
+Turkey power plants have been visualized starting from 2010. Number and installed mechanical power of power plants depending on the provinces are accessible with their types. Go to [https://onurhakki.github.io/Turkey-Electricity-Power-Generation/]
 
 ![image](https://user-images.githubusercontent.com/53830179/199480765-e6a7c7f6-2592-4ee7-9f36-a57d1cb4b504.png)
 
